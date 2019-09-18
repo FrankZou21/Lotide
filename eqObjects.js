@@ -20,25 +20,25 @@ const eqArrays = function(arr1, arr2) {
 };
 
 const eqObjects = function(object1, object2) {
-  for(const key in object1){
-    if(Array.isArray(object1[key]) && Array.isArray(object2[key])){
-      if(!(eqArrays(object1[key], object2[key]))){
+  for (const key in object1) {
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+      if (!(eqArrays(object1[key], object2[key]))) {
         return false;
       }
-    } else{ 
-      if(object1[key] !== object2[key]){
-        return false
+    } else {
+      if (object1[key] !== object2[key]) {
+        return false;
       }
     }
   }
-  for(const key in object2){
-    if(Array.isArray(object2[key]) && Array.isArray(object1[key])){
-      if(!(eqArrays(object2[key], object1[key]))){
+  for (const key in object2) {
+    if (Array.isArray(object2[key]) && Array.isArray(object1[key])) {
+      if (!(eqArrays(object2[key], object1[key]))) {
         return false;
       }
-    } else{ 
-      if(object2[key] !== object1[key]){
-        return false
+    } else {
+      if (object2[key] !== object1[key]) {
+        return false;
       }
     }
   }
