@@ -50,3 +50,5 @@ const assertObjectsEqual = function(actual, expected) {
 assertObjectsEqual([1, 2, 3], [1, 2, 3]);
 assertObjectsEqual([1, [2, 4], 3], [1, 2, 3, "3"]);
 assertObjectsEqual(["1", [2, 4], 3], ["1", [2, 4], 3]);
+
+module.exports = assertObjectsEqual;

@@ -78,3 +78,5 @@ assertEqual(eqObjects(a, b), true);
 const e = {a: 1, b: 2, c: 10, g: {h:5, j: 5}};
 const f = {a: 1, b: 2, c: {e: 5, f: 6}, g: {h:5, j: 5}};
 assertEqual(eqObjects(e, f), false);
+
+module.exports = eqObjectsRecursive;

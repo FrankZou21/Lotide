@@ -61,3 +61,5 @@ assertEqual(eqObjects(cd, cd2), false); // => false
 const abcd = {a: 1, b: 2, c: ["3", 4]};
 const bacd = {b: 2, c: [4, "3"], a: 1};
 assertEqual(eqObjects(abcd, bacd), false);
+
+module.exports = eqObjects;

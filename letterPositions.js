@@ -13,4 +13,7 @@ const letterPositions = function(str) {
   }
   return results;
 };
+
 console.log(letterPositions("hello world"));
+
+module.exports = letterPositions;

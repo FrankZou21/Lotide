@@ -29,3 +29,5 @@ console.log('---');
 const data4 = ["hi", "hi", "to", "Hollywood", "hi"];
 const results4 = takeUntil(data4, x => x !== 'hi');
 console.log(results4);
+
+module.exports = takeUntil;

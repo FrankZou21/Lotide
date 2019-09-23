@@ -14,3 +14,5 @@ const without = function(source, remove) {
 console.log(without([1, 2], [2, 1]));
 console.log(without([1, "hi", 3, 3], ["hi", 3]));
 console.log(without([1, 2, 3, 3, 5, 6, 2, 1], [2, 3, 1]));
+
+module.exports = without;
