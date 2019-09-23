@@ -19,11 +19,11 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const eqObjects = function(object1, object2) {
+const eqObjectsRecursive = function(object1, object2) {
   let returns = true;
   for (const key in object1) {
     if (typeof(object1[key]) === "object" && typeof(object2[key]) === "object" && !(Array.isArray(object1[key])) && !(Array.isArray(object1[key]))) {
-      returns = eqObjects(object1[key], object2[key]);
+      returns = eqObjectsRecursive(object1[key], object2[key]);
     } else if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       if (!(eqArrays(object1[key], object2[key]))) {
         returns = false;
@@ -36,7 +36,7 @@ const eqObjects = function(object1, object2) {
   }
   for (const key in object2) {
     if (typeof(object2[key]) === 'object' && typeof(object1[key]) === 'object' && !(Array.isArray(object1[key])) && !(Array.isArray(object1[key]))) {
-      eqObjects(object2[key], object1[key]);
+      eqObjectsRecursive(object2[key], object1[key]);
     } else if (Array.isArray(object2[key]) && Array.isArray(object1[key])) {
       if (!(eqArrays(object2[key], object1[key]))) {
         returns = false;
@@ -52,31 +52,31 @@ const eqObjects = function(object1, object2) {
 
 const ab = {a: 1, b: 2};
 const ba = {b: 2, a: 1};
-assertEqual(eqObjects(ab, ba), true);
+assertEqual(eqObjectsRecursive(ab, ba), true);
 const abc = {a: 1, b: 2, c: 3};
-assertEqual(eqObjects(ab, abc), false);
+assertEqual(eqObjectsRecursive(ab, abc), false);
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
+assertEqual(eqObjectsRecursive(cd, dc), true); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false
+assertEqual(eqObjectsRecursive(cd, cd2), false); // => false
 
 const abcd = {a: 1, b: 2, c: ["3", 4]};
 const bacd = {b: 2, c: [4, "3"], a: 1};
-assertEqual(eqObjects(abcd, bacd), false);
+assertEqual(eqObjectsRecursive(abcd, bacd), false);
 
 const c = {a: 1, b: 2, c: ["3", 4], d: {e: 5, f: 5}};
 const d = {b: 2, c: ["3", 4], a: 1, d: {f: 6, e: 5}};
-assertEqual(eqObjects(c, d), false);
+assertEqual(eqObjectsRecursive(c, d), false);
 
 const a = {a: 1, b: 2, c: {e: 5, f: 6}};
 const b = {a: 1, b: 2, c: {e: 5, f: 6}};
-assertEqual(eqObjects(a, b), true);
+assertEqual(eqObjectsRecursive(a, b), true);
 
 const e = {a: 1, b: 2, c: 10, g: {h:5, j: 5}};
 const f = {a: 1, b: 2, c: {e: 5, f: 6}, g: {h:5, j: 5}};
-assertEqual(eqObjects(e, f), false);
+assertEqual(eqObjectsRecursive(e, f), false);
 
 module.exports = eqObjectsRecursive;

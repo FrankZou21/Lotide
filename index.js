@@ -8,6 +8,7 @@ const countLetters = require("./countLetters");
 const countOnly = require("./countOnly");
 const eqArrays = require("./eqArrays");
 const eqObjects = require("./eqObjects");
+const eqObjectsRecursive = require("./eqObjectsRecursive")
 const findKey = require("./findKey");
 const findKeyByValue = require("./findKeyByValue");
 const flatten = require("./flatten");
@@ -27,6 +28,7 @@ module.exports = {
   countOnly,
   eqArrays,
   eqObjects,
+  eqObjectsRecursive,
   findKey,
   findKeyByValue,
   flatten,

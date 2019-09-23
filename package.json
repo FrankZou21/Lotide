@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@frankzou/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lighthouse Laas Lotide Project",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -19,7 +19,12 @@
     "type": "git",
     "url": "git+https://github.com/FrankZou21/Lotide.git"
   },
-  "author": "",
+  "author": {
+    "name" : "Frank Zou",
+    "email" : "frankzou2000@hotmail.com",
+    "url" : "https://github.com/FrankZou21"
+    },
+  "contributor": ["Gabi Geollegue"] , 
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FrankZou21/Lotide/issues"

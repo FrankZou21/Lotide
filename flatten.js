@@ -19,12 +19,12 @@ const assertArraysEqual = function(actual, expected) {
   return;
 };
 
-const flatten = function(arr){
-  for(let i = 0; i < arr.length; i++){
-    if(Array.isArray(arr[i])){
+const flatten = function(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
       let removed = arr.splice(i, 1);
       let count = 0;
-      for(let j = 0; j < removed[0].length; j++){
+      for (let j = 0; j < removed[0].length; j++) {
         arr.splice(i + count, 0, removed[0][j]);
         count++;
       }
